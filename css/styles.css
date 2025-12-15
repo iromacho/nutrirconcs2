@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: white;
+    color: black;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.game-card {
+    border: 2px solid black;
+    padding: 30px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.game-card:hover {
+    background: black;
+    color: white;
+}
