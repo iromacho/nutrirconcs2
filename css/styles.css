@@ -38,4 +38,5 @@ h1 {
     background: grey;
     color: white;
     display: flex;
+    border-radius: 8px;
 }
