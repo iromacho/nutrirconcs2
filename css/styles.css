@@ -35,6 +35,7 @@ h1 {
 
 
 .game-card:hover {
-    background: black;
+    background: grey;
     color: white;
+    display: flex;
 }
