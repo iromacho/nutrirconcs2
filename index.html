@@ -33,12 +33,22 @@
         </a>
         
     </div>
-
+     <div class="formulario">
+        <form action="https://formsubmit.co/elportaldelestudiante123@gmail.com" method="POST">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu email" required>
+            <textarea name="pregunta" placeholder="Escribe tu pregunta aquí" required></textarea>
+            <!-- Opcional: evitar spam -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- Redirección tras envío -->
+            <input type="hidden" name="_next" value="https://nutrirconcs2.onrender.com/gracias.html">
+            <button type="submit">Enviar</button>
     <script src="js/main.js"></script>
 </body>
 
 
 </html>
+
 
 
 
