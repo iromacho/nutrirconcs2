@@ -36,6 +36,14 @@ h1 {
     color: #ffffff;
 }
 
+/* Estilo para el nuevo logo intermedio */
+.logo-intermedio {
+    width: 120px; /* Ajusta el tamaño a tu gusto */
+    height: auto;
+    margin: 10px auto 30px auto; /* Centrado con margen inferior hacia los juegos */
+    display: block;
+}
+
 /* Ajustes de la cuadrícula */
 .games-grid {
     display: grid;
