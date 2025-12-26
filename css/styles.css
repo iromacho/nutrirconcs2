@@ -32,6 +32,8 @@ body {
 
 h1 {
     margin: 30px 0;
+    text-transform: uppercase;
+    color: #ffffff;
 }
 
 /* Ajustes de la cuadrícula */
