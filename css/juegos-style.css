@@ -27,6 +27,10 @@ body {
     font-weight: 600;
 }
 
+.item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 /* Cuadrícula pegada al menú */
 .games-grid {
     display: grid;
