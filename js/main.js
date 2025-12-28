@@ -19,3 +19,24 @@ function filterGames() {
         }
     }
 }
+
+window.onload = function() {
+    const banner = document.getElementById('cookie-banner');
+    const btn = document.getElementById('accept-cookies');
+
+    // Comprobar si el usuario ya aceptó las cookies anteriormente
+    if (!localStorage.getItem('cookies-aceptadas')) {
+        // Si no las ha aceptado, mostrar el banner después de 1 segundo
+        setTimeout(() => {
+            banner.classList.add('active');
+        }, 1000);
+    }
+
+    // Al hacer clic en aceptar
+    btn.onclick = function() {
+        // Guardar la elección en el navegador del usuario
+        localStorage.setItem('cookies-aceptadas', 'true');
+        // Ocultar el banner
+        banner.classList.remove('active');
+    };
+};
