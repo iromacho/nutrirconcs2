@@ -94,3 +94,57 @@ h1 {
     color: white;
     transform: translateY(-5px); /* Pequeño salto hacia arriba */
 }
+
+/* Contenedor principal del banner */
+.cookie-container {
+    position: fixed;
+    bottom: -100px; /* Empieza oculto abajo */
+    left: 0;
+    right: 0;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    transition: bottom 0.5s ease; /* Animación de entrada */
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
+
+/* Clase para mostrarlo (se activa con JS) */
+.cookie-container.active {
+    bottom: 0;
+}
+
+.cookie-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cookie-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.cookie-content a {
+    color: #1988f7;
+    text-decoration: underline;
+}
+
+/* Botón de aceptar */
+.cookie-btn {
+    background: #F55B27; /* El naranja de tu menú */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.cookie-btn:hover {
+    background: #d4491d;
+}
