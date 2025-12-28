@@ -31,6 +31,28 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+.search-bar-container {
+    display: flex;
+    justify-content: flex-end; /* Lo empuja a la derecha */
+    padding: 10px 20px; /* Espaciado respecto al borde */
+}
+
+#gameSearch {
+    padding: 8px 15px;
+    width: 200px;
+    border: 2px solid #000;
+    border-radius: 20px; /* Bordes redondeados */
+    outline: none;
+    font-family: Arial, sans-serif;
+    transition: width 0.3s ease;
+}
+
+/* Efecto cuando haces click para escribir */
+#gameSearch:focus {
+    width: 250px;
+    border-color: #F55B27; /* Color naranja de tu menu */
+}
+
 /* Cuadrícula pegada al menú */
 .games-grid {
     display: grid;
