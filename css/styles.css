@@ -148,3 +148,53 @@ h1 {
 .cookie-btn:hover {
     background: #d4491d;
 }
+
+/* Estilos para páginas legales */
+.legal-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Blanco semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: left; /* El texto legal es mejor leerlo alineado a la izquierda */
+}
+
+.legal-container h1 {
+    text-align: center;
+    color: #F55B27;
+    margin-bottom: 30px;
+}
+
+.legal-content h3 {
+    color: #2c3e50;
+    margin-top: 25px;
+    border-bottom: 2px solid #1988f7;
+    display: inline-block;
+}
+
+.legal-content p, .legal-content li {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Botón de volver */
+.btn-back-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-back {
+    display: inline-block;
+    background-color: #1988f7;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #F55B27;
+}
