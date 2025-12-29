@@ -30,6 +30,25 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* Botones especiales en el nav */
+.login-btn {
+    color: white !important;
+    font-weight: bold;
+}
+
+.signup-btn {
+    background-color: white;
+    color: #F55B27 !important; /* Texto naranja */
+    border-radius: 20px;
+    margin-left: 10px;
+    padding: 8px 18px !important;
+    font-weight: bold;
+}
+
+.signup-btn:hover {
+    background-color: #eee;
+}
+
 h1 {
     margin: 30px 0;
     text-transform: uppercase;
