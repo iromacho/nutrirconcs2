@@ -40,3 +40,21 @@ window.onload = function() {
         banner.classList.remove('active');
     };
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const navGroup = document.querySelectorAll('.group')[1]; // El grupo donde están los botones
+
+    if (currentUser) {
+        // Si hay un usuario logueado, cambiamos los botones por su nombre y un botón de salir
+        navGroup.innerHTML = `
+            <span class="item">Hola, ${currentUser.username}</span>
+            <a href="#" id="logout" class="item signup-btn">Salir</a>
+        `;
+
+        document.getElementById('logout').addEventListener('click', function() {
+            localStorage.removeItem('currentUser'); // Borra la sesión activa
+            window.location.reload(); // Recarga la página
+        });
+    }
+});
