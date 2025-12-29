@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentUser && navGroup) {
         // Dibujamos el menú con el nombre y el botón de Salir
         navGroup.innerHTML = `
-            <a href="index.html" class="item">Games</a>
-            <a href="#" class="item">Services</a>
+            <a href="games.html" class="item">Games</a>
+            <a href="services.html" class="item">Services</a>
             <span class="item" style="color: white; margin-left: 20px;">Hola, ${currentUser.username}</span>
             <a href="#" id="logout" class="item signup-btn" style="margin-left: 15px; cursor: pointer;">Salir</a>
         `;
