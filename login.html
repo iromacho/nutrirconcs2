@@ -23,5 +23,32 @@
         </form>
         <p>¿No tienes cuenta? <a href="signup.html">Regístrate aquí</a></p>
     </div>
+
+    <script>
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const userInput = document.querySelectorAll('input')[0].value;
+    const passwordInput = document.querySelectorAll('input')[1].value;
+
+    // Obtener la lista de usuarios de localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Buscar coincidencia de usuario/email Y contraseña
+    const userFound = users.find(u => 
+        (u.username === userInput || u.email === userInput) && u.password === passwordInput
+    );
+
+    if (userFound) {
+        // Guardar sesión activa (opcional)
+        localStorage.setItem('currentUser', JSON.stringify(userFound));
+        
+        alert('Bienvenido, ' + userFound.username);
+        window.location.href = 'index.html'; // Redirigir a la página principal
+    } else {
+        alert('Usuario o contraseña incorrectos.');
+    }
+});
+</script>
 </body>
 </html>
