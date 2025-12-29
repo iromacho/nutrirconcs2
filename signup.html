@@ -10,7 +10,7 @@
     <div class="form-container">
         <a href="index.html" class="form-logo">Nutrir Concs 2</a>
         <h2>Crear Cuenta</h2>
-        <form action="#">
+        <form action="authForm">
             <div class="input-group">
                 <label>Nombre de Usuario</label>
                 <input type="text" required>
@@ -29,30 +29,28 @@
     </div>
 
     <script>
-document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita que la página se recargue
+document.getElementById('authForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Detiene el envío por defecto del HTML
 
-    const username = document.querySelectorAll('input')[0].value;
-    const email = document.querySelectorAll('input')[1].value;
-    const password = document.querySelectorAll('input')[2].value;
+    const inputs = document.querySelectorAll('input');
+    const username = inputs[0].value;
+    const email = inputs[1].value;
+    const password = inputs[2].value;
 
-    // Obtener usuarios ya existentes o crear un array vacío
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    // Verificar si el usuario ya existe
-    const userExists = users.some(u => u.username === username || u.email === email);
-
-    if (userExists) {
-        alert('El usuario o email ya está registrado.');
-    } else {
-        // Guardar nuevo usuario
-        users.push({ username, email, password });
-        localStorage.setItem('users', JSON.stringify(users));
-        
-        alert('¡Registro completado con éxito!');
-        window.location.href = 'login.html'; // Redirigir al login
+    if (users.some(u => u.username === username || u.email === email)) {
+        alert('El usuario ya existe');
+        return;
     }
+
+    users.push({ username, email, password });
+    localStorage.setItem('users', JSON.stringify(users));
+    
+    alert('¡Registro exitoso!');
+    window.location.href = 'login.html'; // Redirección manual
 });
 </script>
+    
 </body>
 </html>
