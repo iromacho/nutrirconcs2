@@ -1,17 +1,10 @@
-console.log("Web de juegos cargada");
-
+// 1. FILTRO DE BUSQUEDA
 function filterGames() {
-    // 1. Obtener lo que el usuario escribe
     let input = document.getElementById('gameSearch').value.toLowerCase();
-    
-    // 2. Seleccionar todas las tarjetas de juegos
     let cards = document.getElementsByClassName('game-card');
 
-    // 3. Recorrer cada tarjeta
     for (let i = 0; i < cards.length; i++) {
         let title = cards[i].getElementsByTagName('span')[0].innerText.toLowerCase();
-        
-        // 4. Si el título incluye lo que escribimos, se muestra; si no, se oculta
         if (title.includes(input)) {
             cards[i].style.display = "flex";
         } else {
@@ -20,41 +13,39 @@ function filterGames() {
     }
 }
 
-window.onload = function() {
+// 2. CONTROL DE CARGA (COOKIES Y LOGIN)
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Lógica de Cookies ---
     const banner = document.getElementById('cookie-banner');
-    const btn = document.getElementById('accept-cookies');
+    const btnAccept = document.getElementById('accept-cookies');
 
-    // Comprobar si el usuario ya aceptó las cookies anteriormente
-    if (!localStorage.getItem('cookies-aceptadas')) {
-        // Si no las ha aceptado, mostrar el banner después de 1 segundo
+    if (banner && !localStorage.getItem('cookies-aceptadas')) {
         setTimeout(() => {
             banner.classList.add('active');
         }, 1000);
     }
 
-    // Al hacer clic en aceptar
-    btn.onclick = function() {
-        // Guardar la elección en el navegador del usuario
-        localStorage.setItem('cookies-aceptadas', 'true');
-        // Ocultar el banner
-        banner.classList.remove('active');
-    };
-};
+    if (btnAccept) {
+        btnAccept.onclick = function() {
+            localStorage.setItem('cookies-aceptadas', 'true');
+            banner.classList.remove('active');
+        };
+    }
 
-document.addEventListener('DOMContentLoaded', function() {
+    // --- Lógica de Usuario Logueado ---
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    const navGroup = document.querySelectorAll('.group')[1]; // El grupo donde están los botones
+    const navGroup = document.querySelectorAll('.group')[1]; 
 
-    if (currentUser) {
-        // Si hay un usuario logueado, cambiamos los botones por su nombre y un botón de salir
+    if (currentUser && navGroup) {
         navGroup.innerHTML = `
-            <span class="item">Hola, ${currentUser.username}</span>
+            <span class="item" style="color: white;">Hola, ${currentUser.username}</span>
             <a href="#" id="logout" class="item signup-btn">Salir</a>
         `;
 
-        document.getElementById('logout').addEventListener('click', function() {
-            localStorage.removeItem('currentUser'); // Borra la sesión activa
-            window.location.reload(); // Recarga la página
+        document.getElementById('logout').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('currentUser'); 
+            window.location.reload(); 
         });
     }
 });
