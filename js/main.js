@@ -1,3 +1,20 @@
+// Esta función debe estar ARRIBA de todo, fuera del DOMContentLoaded
+function filterGames() {
+    const input = document.getElementById('gameSearch').value.toLowerCase();
+    const cards = document.getElementsByClassName('game-card');
+
+    for (let i = 0; i < cards.length; i++) {
+        // Buscamos el texto dentro del span de cada tarjeta
+        const title = cards[i].querySelector('span').innerText.toLowerCase();
+        
+        if (title.includes(input)) {
+            cards[i].style.display = "flex";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // --- 1. Definición de variables globales del DOM ---
     const banner = document.getElementById('cookie-banner');
