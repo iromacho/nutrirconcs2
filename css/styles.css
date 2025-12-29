@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
+    padding: 0 20px; /* <--- AÑADE ESTO: 0 arriba/abajo, 20px izquierda/derecha */
 }
 
 /* Quitamos el bold de los elementos del menú */
@@ -39,7 +40,7 @@ body {
     background-color: white;
     color: #F55B27 !important;
     border-radius: 8px; /* Menos redondeado, más elegante */
-    margin-left: 5px;
+    margin-left: 15px;
     padding: 6px 12px !important; /* Padding reducido para hacerlo más pequeño */
     font-weight: normal !important;
     font-size: 15px !important; /* Fuente un poco más pequeña */
