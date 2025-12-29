@@ -14,16 +14,40 @@ body {
     box-sizing: border-box;
 }
 
+/* Quitamos el bold de los elementos del menú */
 .item {
     color: white;
     text-decoration: none;
     font-size: 18px;
     display: inline-block;
     padding: 14px 20px;
+    font-weight: normal; /* Asegura que no haya negrita */
 }
 
 .item.title {
-    font-weight: 600;
+    font-weight: normal; /* Quitamos negrita también al título */
+}
+
+/* Ajuste del botón de Login */
+.login-btn {
+    color: white !important;
+    font-weight: normal !important;
+}
+
+/* Ajuste del botón de Sign Up (Más pequeño y menos circular) */
+.signup-btn {
+    background-color: white;
+    color: #F55B27 !important;
+    border-radius: 8px; /* Menos redondeado, más elegante */
+    margin-left: 5px;
+    padding: 6px 12px !important; /* Padding reducido para hacerlo más pequeño */
+    font-weight: normal !important;
+    font-size: 15px !important; /* Fuente un poco más pequeña */
+    align-self: center;
+}
+
+.signup-btn:hover {
+    background-color: #eee;
 }
 
 .item:hover {
