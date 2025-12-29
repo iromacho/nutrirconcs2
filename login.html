@@ -10,14 +10,14 @@
     <div class="form-container">
         <a href="index.html" class="form-logo">Nutrir Concs 2</a>
         <h2>Iniciar Sesión</h2>
-        <form action="authForm">
+        <form id="authForm">
             <div class="input-group">
                 <label>Usuario o Email</label>
-                <input type="text" required>
+                <input type="text" id="loginUser" required>
             </div>
             <div class="input-group">
                 <label>Contraseña</label>
-                <input type="password" required>
+                <input type="password" id="loginPass" required>
             </div>
             <button type="submit" class="submit-btn">Entrar</button>
         </form>
@@ -26,11 +26,10 @@
 
 <script>
 document.getElementById('authForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Detiene el envío por defecto del HTML
+    e.preventDefault(); 
 
-    const inputs = document.querySelectorAll('input');
-    const userInput = inputs[0].value;
-    const passwordInput = inputs[1].value;
+    const userInput = document.getElementById('loginUser').value;
+    const passwordInput = document.getElementById('loginPass').value;
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
 
@@ -46,6 +45,5 @@ document.getElementById('authForm').addEventListener('submit', function(e) {
     }
 });
 </script>
-    
 </body>
 </html>
