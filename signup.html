@@ -27,6 +27,29 @@
                 <input type="password" id="regPass" required>
             </div>
             <button type="submit" class="submit-btn">Registrarse</button>
+            <!-- Debajo de tu <button class="submit-btn"> -->
+            <div class="separator">
+              <span>o</span>
+            </div>
+
+            <div id="g_id_onload"
+                 data-client_id="TU_CLIENT_ID_DE_GOOGLE.apps.googleusercontent.com"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
+            
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-size="large"
+                 data-logo_alignment="left"
+                 data-width="350"> <!-- Ajustado al ancho de tu form -->
+            </div>
+
         </form>
         <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
     </div>
@@ -53,5 +76,9 @@ document.getElementById('authForm').addEventListener('submit', function(e) {
     window.location.href = 'login.html'; 
 });
 </script>
+
+<script src="accounts.google.com" async defer></script>
+
+    
 </body>
 </html>
