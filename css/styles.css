@@ -14,7 +14,9 @@
 
 /* Evita que los blobs se salgan del contenedor visual */
 .aurora-blob {
+    pointer-events: none; /* Para que no bloqueen los clics en los juegos */
     mix-blend-mode: screen;
+    will-change: transform; /* Ayuda al navegador a animar suavemente */
 }
 
 body {
