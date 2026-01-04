@@ -29,40 +29,30 @@ function initAurora() {
     const container = document.getElementById('aurora-container');
     if (!container) return;
 
+    // Colores: Naranja, Rosa, Morado, Azul
     const colors = ['#ff7300', '#ff00f7', '#5227ff', '#00d4ff'];
 
     colors.forEach((color) => {
         const blob = document.createElement('div');
         blob.className = 'aurora-blob';
         blob.style.backgroundColor = color;
-        
-        Object.assign(blob.style, {
-            position: 'absolute',
-            width: '600px',
-            height: '600px',
-            borderRadius: '50%',
-            opacity: '0.5',
-            left: '0',
-            top: '0'
-        });
-
         container.appendChild(blob);
 
-        // Usamos gsap.fromTo para forzar el inicio del movimiento
+        // Animación con GSAP (Esto es lo que las mueve)
         gsap.fromTo(blob, 
             {
                 x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight
+                y: Math.random() * window.innerHeight,
+                scale: 1
             },
             {
                 x: "random(0, " + window.innerWidth + ")",
                 y: "random(0, " + window.innerHeight + ")",
-                scale: "random(1.2, 2)",
-                duration: "random(15, 25)",
+                scale: "random(1.5, 2.5)",
+                duration: "random(15, 30)",
                 repeat: -1,
                 yoyo: true,
-                ease: "sine.inOut",
-                delay: Math.random() * 2 // Escalonar el inicio
+                ease: "sine.inOut"
             }
         );
     });
