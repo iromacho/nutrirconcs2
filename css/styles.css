@@ -1,4 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.aurora-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Se queda detrás de todo */
+    background: linear-gradient(135deg, #1988f7, #5227ff, #ff00f7, #ff7300);
+    background-size: 400% 400%; /* Tamaño grande para que se mueva */
+    animation: aurora-animation 15s ease infinite;
+    overflow: hidden;
+}
+
+/* Capa de desenfoque para que parezca una aurora real */
+.aurora-bg::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 50% 50%, transparent, rgba(25, 136, 247, 0.4));
+    backdrop-filter: blur(80px); /* Suaviza los colores */
+}
+
+/* Animación del movimiento */
+@keyframes aurora-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 body {
     margin: 0;
     background-color: #1988f7;
