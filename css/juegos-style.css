@@ -130,20 +130,20 @@ h1 {
 
 
 
-#gameSearch {
+/*#gameSearch {
     padding: 8px 15px;
     width: 200px;
     border: 2px solid #000;
-    border-radius: 20px; /* Bordes redondeados */
+    border-radius: 20px; 
     outline: none;
     font-family: Arial, sans-serif;
     transition: width 0.3s ease;
 }
 
-/* Efecto cuando haces click para escribir */
+/* Efecto cuando haces click para escribir 
 #gameSearch:focus {
     width: 250px;
-    border-color: #F55B27; /* Color naranja de tu menu */
+    border-color: #F55B27; Color naranja de tu menu 
 }
 
 
