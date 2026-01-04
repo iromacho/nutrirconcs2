@@ -110,9 +110,7 @@ body {
     color: black;
     padding: 10px;
     transition: transform 0.2s
-    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con un poco de transparencia */
-    backdrop-filter: blur(5px); /* Efecto cristal */
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    
 }
 
 .img-container {
