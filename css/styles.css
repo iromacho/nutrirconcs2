@@ -6,18 +6,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    background: #020205; /* Fondo oscuro base */
+    z-index: -2; /* Detrás de todo, incluso del buscador */
+    background: #020205; /* Fondo oscuro profundo */
     overflow: hidden;
-    filter: blur(100px); /* Esto crea el efecto suave de la foto */
+    filter: blur(100px); /* El secreto del efecto aurora */
 }
 
+/* Evita que los blobs se salgan del contenedor visual */
 .aurora-blob {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    opacity: 0.5;
+    mix-blend-mode: screen;
 }
 
 body {
