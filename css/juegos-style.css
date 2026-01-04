@@ -125,6 +125,7 @@ h1 {
     display: flex;
     justify-content: center; /* Lo empuja a la derecha */
     /*padding: 10px 20px;  Espaciado respecto al borde */
+    padding-top: 10px;
 }
 
 
