@@ -28,28 +28,6 @@
                 <input type="password" id="regPass" required>
             </div>
             <button type="submit" class="submit-btn">Registrarse</button>
-            <!-- Debajo de tu <button class="submit-btn"> -->
-            <div class="separator">
-              <span>o</span>
-            </div>
-
-            <div id="g_id_onload"
-                 data-client_id="1234567890-ejemplo.apps.googleusercontent.com" 
-                 data-context="signin"
-                 data-ux_mode="popup"
-                 data-callback="handleCredentialResponse"
-                 data-auto_prompt="false">
-            </div>
-            
-            <div class="g_id_signin"
-     data-type="standard"
-     data-shape="rectangular"
-     data-theme="outline"
-     data-text="signin_with"
-     data-size="large"
-     data-logo_alignment="left"
-     data-width="270"> <!-- Un poco más pequeño para que quepa bien con el padding de 40px -->
-</div>
 
         </form>
         <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
@@ -76,14 +54,6 @@ document.getElementById('authForm').addEventListener('submit', function(e) {
     alert('¡Registro exitoso!');
     window.location.href = 'login.html'; 
 });
-
-function handleCredentialResponse(response) {
-  // Aquí recibes el token JWT de Google
-  console.log("Token de Google:", response.credential);
-  
-  // Puedes decodificarlo o enviarlo a tu backend
-  alert("¡Sesión iniciada con éxito!");
-}
 
     
 </script>
