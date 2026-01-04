@@ -31,27 +31,93 @@ body {
 }
 
 .menu-bar {
-    background-color: #F55B27;
+    background-color: #000000;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    margin-bottom: 0; /* Asegura que no haya espacio debajo del menú */
+    padding: 0 20px; /* <--- AÑADE ESTO: 0 arriba/abajo, 20px izquierda/derecha */
 }
 
+/* Quitamos el bold de los elementos del menú */
 .item {
     color: white;
     text-decoration: none;
     font-size: 18px;
     display: inline-block;
     padding: 14px 20px;
+    font-weight: normal; /* Asegura que no haya negrita */
 }
 
 .item.title {
-    font-weight: 600;
+    font-weight: normal; /* Quitamos negrita también al título */
 }
+
 
 .item:hover {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+h1 {
+    margin: 30px 0;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+
+/* Ajustes de la cuadrícula */
+.games-grid {
+    display: grid;
+    /* Ajusta el 200px si quieres que las tarjetas sean más anchas o estrechas */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 200px)); 
+    gap: 10px; /* Controla qué tan juntos están */
+    justify-content: center; /* Centra la cuadrícula en la pantalla */
+    padding: 20px;
+}
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con un poco de transparencia */
+    backdrop-filter: blur(5px); /* Efecto cristal */
+    border: 5px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Contenedor para forzar que todas las imágenes midan igual */
+.img-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Puedes usar 16/9 si prefieres rectangulares */
+    overflow: hidden;
+    border: 3px solid #000;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    background-color: white;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+    display: block;
+}
+
+.game-card span {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Efecto Hover mejorado */
+.game-card:hover {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    transform: translateY(-5px); /* Pequeño salto hacia arriba */
 }
 
 
@@ -77,50 +143,4 @@ body {
     border-color: #F55B27; /* Color naranja de tu menu */
 }
 
-/* Cuadrícula pegada al menú */
-.games-grid {
-    display: grid;
-    /* Ajustado a 4 columnas fijas para que queden alineados arriba */
-    grid-template-columns: repeat(4, 200px); 
-    gap: 10px; 
-    justify-content: center;
-    padding-top: 5px; /* Mínimo espacio para que no choque el borde con el menú naranja */
-    padding-bottom: 20px;
-}
 
-.game-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    padding: 10px;
-    transition: transform 0.2s
-    
-}
-
-.img-container {
-    width: 100%;
-    aspect-ratio: 1 / 1; 
-    overflow: hidden;
-    border: 3px solid #000;
-    border-radius: 15px;
-    margin-bottom: 5px;
-    background-color: #fff;
-}
-
-.img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.game-card span {
-    font-weight: bold;
-    font-size: 12px;
-}
-
-.game-card:hover {
-    transform: scale(1.05);
-}
