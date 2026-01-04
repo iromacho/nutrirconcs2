@@ -1,22 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 #aurora-container {
-    position: fixed;
+    position: fixed; /* Corregido: antes decía firxed */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2; /* Detrás de todo, incluso del buscador */
-    background: #020205; /* Fondo oscuro profundo */
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    background: #020205; /* Fondo negro profundo */
     overflow: hidden;
-    filter: blur(100px); /* El secreto del efecto aurora */
+    filter: blur(100px); /* Esto crea el efecto de nube/aurora */
 }
 
-/* Evita que los blobs se salgan del contenedor visual */
 .aurora-blob {
-    pointer-events: none; /* Para que no bloqueen los clics en los juegos */
-    mix-blend-mode: screen;
-    will-change: transform; /* Ayuda al navegador a animar suavemente */
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    mix-blend-mode: screen; /* Para que los colores se mezclen entre sí */
+    pointer-events: none; /* Para que puedas hacer clic a través de ellas */
+    will-change: transform;
 }
 
 body {
