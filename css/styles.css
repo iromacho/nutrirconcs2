@@ -27,6 +27,7 @@ body {
     background-color: #1988f7;
     font-family: "Poppins", sans-serif;
     color: black;
+    text-align: center;
 }
 
 .menu-bar {
@@ -100,7 +101,6 @@ h1 {
     margin: 30px 0;
     text-transform: uppercase;
     color: #ffffff;
-    text-align: center;
 }
 
 
