@@ -49,3 +49,28 @@ h2 { margin-bottom: 25px; color: #333; }
 .submit-btn:hover { background-color: #333; }
 p { margin-top: 20px; font-size: 14px; color: #666; }
 p a { color: #1988f7; text-decoration: none; font-weight: bold; }
+
+.separator {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.separator:not(:empty)::before { margin-right: .5em; }
+.separator:not(:empty)::after { margin-left: .5em; }
+
+/* Ajuste para que el botón de Google se vea bien centrado */
+.g_id_signin {
+    display: flex;
+    justify-content: center;
+}
+
