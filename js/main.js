@@ -29,7 +29,6 @@ function initAurora() {
     const container = document.getElementById('aurora-container');
     if (!container) return;
 
-    // Colores basados en tu captura: Naranja, Rosa, Azul Eléctrico
     const colors = ['#ff7300', '#ff00f7', '#5227ff', '#00d4ff'];
 
     colors.forEach((color) => {
@@ -37,32 +36,37 @@ function initAurora() {
         blob.className = 'aurora-blob';
         blob.style.backgroundColor = color;
         
-        // Estilos base para las manchas de color
         Object.assign(blob.style, {
             position: 'absolute',
             width: '600px',
             height: '600px',
             borderRadius: '50%',
-            opacity: '0.4',
-            left: '-100px',
-            top: '-100px'
+            opacity: '0.5',
+            left: '0',
+            top: '0'
         });
 
         container.appendChild(blob);
 
-        // Animación aleatoria continua con GSAP
-        gsap.to(blob, {
-            x: 'random(0, window.innerWidth)',
-            y: 'random(0, window.innerHeight)',
-            scale: 'random(1, 1.8)',
-            duration: 'random(10, 20)',
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
-        });
+        // Usamos gsap.fromTo para forzar el inicio del movimiento
+        gsap.fromTo(blob, 
+            {
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight
+            },
+            {
+                x: "random(0, " + window.innerWidth + ")",
+                y: "random(0, " + window.innerHeight + ")",
+                scale: "random(1.2, 2)",
+                duration: "random(15, 25)",
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: Math.random() * 2 // Escalonar el inicio
+            }
+        );
     });
 }
-
 /**
  * 3. LOGICA PRINCIPAL AL CARGAR EL DOM
  */
