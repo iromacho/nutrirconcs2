@@ -116,39 +116,6 @@ h1 {
     color: #ffffff;
 }
 
-/* Estilo para el nuevo logo intermedio */
-/* Modifica o añade esto a tu clase existente */
-.logo-intermedio {
-    width: 120px;
-    height: auto;
-    margin: 10px auto 30px auto;
-    display: block;
-    cursor: pointer;
-    /* Transición suave para el filtro de sombra */
-    transition: transform 0.3s ease, filter 0.3s ease;
-    filter: drop-shadow(0px 0px 0px rgba(0,0,0,0));
-}
-
-/* Animación al pasar el mouse */
-.logo-intermedio:hover {
-    /* Hace que el logo crezca un poco y le pone un brillo/sombra */
-    transform: scale(1.15) rotate(5deg); 
-    filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.3));
-    animation: heartbeat 1.5s infinite; /* Activa el latido constante mientras el mouse esté encima */
-}
-
-/* Definición de la animación de latido */
-@keyframes heartbeat {
-    0% {
-        transform: scale(1.15) rotate(5deg);
-    }
-    50% {
-        transform: scale(1.25) rotate(-5deg);
-    }
-    100% {
-        transform: scale(1.15) rotate(5deg);
-    }
-}
 
 /* Ajustes de la cuadrícula */
 .games-grid {
