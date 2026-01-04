@@ -123,8 +123,8 @@ h1 {
 
 .search-bar-container {
     display: flex;
-    justify-content: flex-end; /* Lo empuja a la derecha */
-    padding: 10px 20px; /* Espaciado respecto al borde */
+    justify-content: center; /* Lo empuja a la derecha */
+    /*padding: 10px 20px;  Espaciado respecto al borde */
 }
 
 
