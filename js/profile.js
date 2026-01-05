@@ -1,3 +1,9 @@
+// Al principio de js/profile.js
+const user = JSON.parse(localStorage.getItem('currentUser'));
+if (!user) {
+    window.location.href = 'index.html'; // Si no hay usuario, lo echa al inicio
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Obtener datos del localStorage
     const user = JSON.parse(localStorage.getItem('currentUser'));
