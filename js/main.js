@@ -111,13 +111,11 @@ document.addEventListener('DOMContentLoaded', function() {
         <a href="games.html" class="item">Games</a>
         <a href="services.html" class="item">Services</a>
         
-        <a href="profile.html" class="user-profile-link" style="text-decoration: none; margin-left: 20px; display: flex; align-items: center;">
-            <span style="color: #ff7300; font-weight: bold; border: 1px solid #ff7300; padding: 5px 15px; border-radius: 20px;">
-                👤 ${currentUser.username}
-            </span>
+        <a href="profile.html" class="item profile-link-box">
+            👤 ${currentUser.username}
         </a>
 
-        <a href="#" id="logout" class="item signup-btn" style="margin-left: 15px; cursor: pointer;">Salir</a>
+        <a href="#" id="logout" class="item signup-btn">Salir</a>
     `;
 
         const logoutBtn = document.getElementById('logout');
