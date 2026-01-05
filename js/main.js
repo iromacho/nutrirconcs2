@@ -1,10 +1,9 @@
 /**
- * 1. FUNCION DE BUSQUEDA
- * Se mantiene fuera de DOMContentLoaded para que sea accesible desde el HTML (onkeyup)
+ * 1. FUNCIÓN DE BÚSQUEDA
  */
 function filterGames() {
     const input = document.getElementById('gameSearch');
-    if (!input) return; // Evita errores si no existe el buscador en la página actual
+    if (!input) return;
 
     const filter = input.value.toLowerCase();
     const cards = document.getElementsByClassName('game-card');
@@ -23,13 +22,12 @@ function filterGames() {
 }
 
 /**
- * 2. FUNCION DE FONDO AURORA (Usando GSAP)
+ * 2. FUNCIÓN DE FONDO AURORA (Usando GSAP)
  */
 function initAurora() {
     const container = document.getElementById('aurora-container');
     if (!container) return;
 
-    // Colores: Naranja, Rosa, Morado, Azul
     const colors = ['#ff7300', '#ff00f7', '#5227ff', '#00d4ff'];
 
     colors.forEach((color) => {
@@ -38,7 +36,6 @@ function initAurora() {
         blob.style.backgroundColor = color;
         container.appendChild(blob);
 
-        // Animación con GSAP (Esto es lo que las mueve)
         gsap.fromTo(blob, 
             {
                 x: Math.random() * window.innerWidth,
@@ -57,15 +54,37 @@ function initAurora() {
         );
     });
 }
+
 /**
- * 3. LOGICA PRINCIPAL AL CARGAR EL DOM
+ * 3. FUNCIÓN PARA ENVIAR DATOS A GOOGLE SHEETS
+ */
+async function enviarAExcel(userData) {
+    const URL_EXCEL = "https://script.google.com/macros/s/AKfycbx-UMJPEEKE0xsQQfCjuCWBBiX0wcy0tsO5T5d2ua2DBoEUv_ujlBwNv9pTDUkDzB-aLA/exec";
+    
+    // Verificamos si ya los enviamos en esta sesión para no duplicar filas cada vez que recargue
+    if (sessionStorage.getItem('excel_enviado')) return;
+
+    try {
+        await fetch(URL_EXCEL, {
+            method: 'POST',
+            mode: 'no-cors', // Necesario para Google Scripts
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(userData)
+        });
+        sessionStorage.setItem('excel_enviado', 'true');
+        console.log("Datos sincronizados con Excel");
+    } catch (error) {
+        console.error("Error al sincronizar con Excel:", error);
+    }
+}
+
+/**
+ * 4. LÓGICA PRINCIPAL AL CARGAR EL DOM
  */
 document.addEventListener('DOMContentLoaded', function() {
     
-    // --- Iniciar Fondo Aurora ---
     initAurora();
 
-    // --- Definición de variables del DOM ---
     const banner = document.getElementById('cookie-banner');
     const btnAccept = document.getElementById('accept-cookies');
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -73,9 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Lógica de Cookies ---
     if (banner && !localStorage.getItem('cookies-aceptadas')) {
-        setTimeout(() => {
-            banner.classList.add('active');
-        }, 1000);
+        setTimeout(() => { banner.classList.add('active'); }, 1000);
     }
 
     if (btnAccept) {
@@ -87,7 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Lógica de Usuario Logueado ---
     if (currentUser && navGroup) {
-        // Reconstruimos el menú para que no se borren Games y Services
+        // Enviar datos al Excel automáticamente si existen
+        enviarAExcel(currentUser);
+
         navGroup.innerHTML = `
             <a href="games.html" class="item">Games</a>
             <a href="services.html" class="item">Services</a>
@@ -100,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             logoutBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 localStorage.removeItem('currentUser'); 
+                sessionStorage.removeItem('excel_enviado'); // Reset para el próximo login
                 alert('Has cerrado sesión correctamente');
                 window.location.href = 'index.html'; 
             });
