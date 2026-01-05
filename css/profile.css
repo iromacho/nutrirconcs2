@@ -1,31 +1,32 @@
-.profile-container {
+/* Contenedor para centrar la tarjeta en pantalla */
+.profile-page-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 90vh;
-    padding: 20px;
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh;   /* Ocupa toda la altura */
+    padding-top: 50px;   /* Espacio extra por si acaso */
+}
+
+.user-icon-large {
+    font-size: 60px;
+    background: rgba(255, 115, 0, 0.2);
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 2px solid #ff7300;
 }
 
 .profile-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
-    padding: 40px;
-    width: 100%;
-    max-width: 450px;
+    padding: 50px 40px; /* Más espacio interno */
+    width: 90%;
+    max-width: 400px;
     text-align: center;
-    color: white;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-}
-
-#user-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #ff7300; /* Color de tu aurora */
-    margin-bottom: 20px;
-    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .profile-header h1 {
