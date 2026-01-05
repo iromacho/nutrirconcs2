@@ -10,7 +10,7 @@
 }
 
 /* Estilo para el botón de perfil (el de ADMIN) */
-.profile-link-box {
+/*.profile-link-box {
     color: #ff7300 !important;
     font-weight: bold;
     border: 1px solid #ff7300;
