@@ -107,14 +107,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Enviar datos al Excel automáticamente si existen
         enviarAExcel(currentUser);
 
-        navGroup.innerHTML = `
+        // Añadimos una clase específica para controlar el layout desde CSS
+    navGroup.classList.add('nav-logged-in'); 
+    
+    navGroup.innerHTML = `
         <a href="games.html" class="item">Games</a>
         <a href="services.html" class="item">Services</a>
-        
-        <a href="profile.html" class="item profile-link-box">
-            👤 ${currentUser.username}
-        </a>
-
+        <a href="profile.html" class="item profile-link-box">👤 ${currentUser.username}</a>
         <a href="#" id="logout" class="item signup-btn">Salir</a>
     `;
 
