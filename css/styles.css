@@ -1,6 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+/* Fuerza a que el menú sea una línea horizontal perfecta */
+.group {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 20px; /* Espacio entre botones */
+}
+
+/* Estilo para el botón de perfil (el de ADMIN) */
+.profile-link-box {
+    color: #ff7300 !important;
+    font-weight: bold;
+    border: 1px solid #ff7300;
+    padding: 8px 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.profile-link-box:hover {
+    background: rgba(255, 115, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 115, 0, 0.3);
+}
+
+/* Asegura que el botón de Salir no se baje */
+.signup-btn {
+    white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+    margin: 0 !important;
+}
+
 #loader {
     position: fixed;
     top: 0;
