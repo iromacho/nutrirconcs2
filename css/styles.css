@@ -1,5 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #020205; /* Mismo fondo que tu web */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Por encima de todo */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader-content {
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    letter-spacing: 4px;
+}
+
+/* El círculo que gira */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid #ff7300; /* Color de tu Aurora */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Clase para ocultarlo */
+#loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
 #aurora-container {
     position: fixed; /* Corregido: antes decía firxed */
     top: 0;
