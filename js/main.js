@@ -111,10 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <a href="games.html" class="item">Games</a>
         <a href="services.html" class="item">Services</a>
         
-        <a href="profile.html" class="user-profile-link" style="text-decoration: none; display: inline-flex; align-items: center; margin-left: 20px;">
-            <img src="${currentUser.picture || 'assets/default-avatar.png'}" 
-                 style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; border: 2px solid #ff7300;">
-            <span style="color: white; font-weight: bold;">${currentUser.username}</span>
+        <a href="profile.html" class="user-profile-link" style="text-decoration: none; margin-left: 20px; display: flex; align-items: center;">
+            <span style="color: #ff7300; font-weight: bold; border: 1px solid #ff7300; padding: 5px 15px; border-radius: 20px;">
+                👤 ${currentUser.username}
+            </span>
         </a>
 
         <a href="#" id="logout" class="item signup-btn" style="margin-left: 15px; cursor: pointer;">Salir</a>
