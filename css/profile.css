@@ -4,13 +4,7 @@ body, html {
     margin: 0;
 }
 
-.profile-page-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Esto lo baja al centro exacto */
-    width: 100%;
-    height: 100vh; /* Usa toda la altura de la ventana */
-}
+
 
 .user-icon-large {
     font-size: 60px;
@@ -23,15 +17,52 @@ body, html {
     border: 2px solid #ff7300;
 }
 
+/* 1. Subir la tarjeta */
+.profile-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    padding-bottom: 10vh; /* Empuja un poco hacia arriba */
+}
+
 .profile-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
-    border-radius: 24px;
-    padding: 50px 40px; /* Más espacio interno */
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    margin-top: -50px; /* Sube la tarjeta específicamente */
+}
+
+/* 2. Botón "Volver a jugar" Estilizado */
+.btn-primary {
+    background: linear-gradient(135deg, #ff7300 0%, #ff00f7 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 115, 0, 0.4);
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 115, 0, 0.6);
+    filter: brightness(1.1);
+}
+
+/* 3. Arreglo Navbar alineación */
+.nav-logged-in {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    flex-wrap: nowrap !important; /* Evita que el botón Salir se baje */
 }
 
 .profile-header h1 {
