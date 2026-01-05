@@ -108,11 +108,17 @@ document.addEventListener('DOMContentLoaded', function() {
         enviarAExcel(currentUser);
 
         navGroup.innerHTML = `
-            <a href="games.html" class="item">Games</a>
-            <a href="services.html" class="item">Services</a>
-            <span class="item" style="color: white; margin-left: 20px;">Hola, ${currentUser.username}</span>
-            <a href="#" id="logout" class="item signup-btn" style="margin-left: 15px; cursor: pointer;">Salir</a>
-        `;
+        <a href="games.html" class="item">Games</a>
+        <a href="services.html" class="item">Services</a>
+        
+        <a href="profile.html" class="user-profile-link" style="text-decoration: none; display: inline-flex; align-items: center; margin-left: 20px;">
+            <img src="${currentUser.picture || 'assets/default-avatar.png'}" 
+                 style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; border: 2px solid #ff7300;">
+            <span style="color: white; font-weight: bold;">${currentUser.username}</span>
+        </a>
+
+        <a href="#" id="logout" class="item signup-btn" style="margin-left: 15px; cursor: pointer;">Salir</a>
+    `;
 
         const logoutBtn = document.getElementById('logout');
         if (logoutBtn) {
