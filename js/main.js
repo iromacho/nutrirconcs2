@@ -126,3 +126,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        // Añadimos un pequeño retraso de 500ms para que la transición no sea brusca
+        setTimeout(() => {
+            loader.classList.add('fade-out');
+        }, 500);
+    }
+});
