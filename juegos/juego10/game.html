@@ -59,6 +59,21 @@
         </canvas>
     </div>
 
+    <div>
+          <button id="hackMoney">
+           Dinero infinito
+          </button>
+     </div>
+     <script>
+          document.getElementedById("hackMoney").onclick = () => {
+               try{
+                    eval(atob("b'MTAwMCwxMDAwMDAwMDAwMDAsMTAwMCwzLDAsMCwwLDAsMCwwLDAsMSwxLDAsNDM1OTUuNzgsOTk5OTk5LDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDEsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAsMTAwMCwwLDAsMCwxLDEwMDAwMDAsMSwwLDA='"));
+               } catch (e) {
+                    alert("Error al aplicar dinero");
+               }
+          }
+     </script>
+
     <!-- Run the game code -->
     <script type="text/javascript" src="html5game/Coding_BreakOut1.js"></script>
     <script>window.onload = GameMaker_Init;</script>
