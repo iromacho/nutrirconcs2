@@ -1,0 +1,98 @@
+body.access-gate-lock {
+  overflow: hidden;
+}
+
+#access-gate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.18), transparent 45%),
+              radial-gradient(circle at 85% 25%, rgba(99, 102, 241, 0.18), transparent 42%),
+              radial-gradient(circle at 50% 85%, rgba(236, 72, 153, 0.16), transparent 45%),
+              rgba(2, 6, 23, 0.95);
+  backdrop-filter: blur(6px);
+}
+
+#access-gate-overlay.access-gate-hide {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.access-gate-card {
+  width: min(420px, 100%);
+  background: rgba(8, 15, 33, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 16px;
+  padding: 28px;
+  color: #f8fafc;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  font-family: "Poppins", sans-serif;
+}
+
+.access-gate-logo {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.access-gate-card h2 {
+  margin: 0 0 6px;
+}
+
+.access-gate-subtitle {
+  margin: 0 0 18px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.access-gate-input-group {
+  text-align: left;
+  margin-bottom: 14px;
+}
+
+.access-gate-input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+}
+
+.access-gate-input-group input {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.8);
+  color: #fff;
+  padding: 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.access-gate-input-group input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.access-gate-btn {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px;
+  color: #0f172a;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.access-gate-error {
+  min-height: 20px;
+  margin: 10px 0 0;
+  color: #fda4af;
+  font-size: 0.9rem;
+}
