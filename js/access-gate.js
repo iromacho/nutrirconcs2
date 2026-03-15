@@ -1,6 +1,19 @@
 (function () {
-  const ACCESS_KEY = 'nutrirconcs2_access_granted';
+  const ACCESS_KEY_PREFIX = 'nutrirconcs2_access_granted';
   const ACCESS_PASSWORD = 'N2#rC9!a';
+  const accessKeyByHost = `${ACCESS_KEY_PREFIX}:${window.location.host}`;
+
+  function hasAccessSaved() {
+    return (
+      localStorage.getItem(accessKeyByHost) === 'true' ||
+      sessionStorage.getItem(accessKeyByHost) === 'true'
+    );
+  }
+
+  function saveAccess() {
+    localStorage.setItem(accessKeyByHost, 'true');
+    sessionStorage.setItem(accessKeyByHost, 'true');
+  }
 
   function createGate() {
     const overlay = document.createElement('div');
@@ -33,7 +46,7 @@
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       if (input.value === ACCESS_PASSWORD) {
-        sessionStorage.setItem(ACCESS_KEY, 'true');
+        saveAccess();
         overlay.classList.add('access-gate-hide');
         document.body.classList.remove('access-gate-lock');
         setTimeout(function () {
@@ -48,7 +61,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (sessionStorage.getItem(ACCESS_KEY) === 'true') return;
+    if (hasAccessSaved()) return;
     createGate();
   });
 })();
