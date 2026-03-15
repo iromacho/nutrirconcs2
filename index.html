@@ -2,50 +2,80 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error - Baneada</title>
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: #ff4d4d;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 4em;
-            margin-bottom: 0.2em;
-        }
-
-        h2 {
-            font-size: 2em;
-            margin: 0.5em 0;
-        }
-
-        p {
-            font-size: 1.5em;
-            margin-top: 1em;
-            color: #ff6666;
-        }
-
-        .highlight {
-            color: #ff0000;
-            font-weight: bold;
-            font-size: 2em;
-            margin-top: 0.5em;
-        }
-    </style>
+    <title>NutrirConcs2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="website icon" type="png" href="assets/icono.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5479526460158334"
+     crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>ERROR</h1>
-    <h2>Estás baneada por Izantech</h2>
-    <p class="highlight">Looser</p>
-    <p class="highlight">Pringada</p>
+
+    <div id="loader">
+    <div class="loader-content">
+        <div class="spinner"></div>
+        <h2>CARGANDO<span>...</span></h2>
+    </div>
+</div>
+
+    <div id="aurora-container"></div>
+
+    <nav class="menu-bar">
+      <div class="group">
+        <a class="item title">Nutrir Concs 2</a>
+      </div>
+      <div class="group">
+        <a href="games.html" class="item">Games</a>
+        <a href="services.html" class="item">Apps</a>
+        <a href="login.html" class="item login-btn">Login</a>
+        <a href="signup.html" class="item signup-btn">Sign Up</a>
+      </div>
+    </nav>
+
+
+    <h1>Popular Games</h1>
+
+
+    <div class="games-grid">
+        <a class="game-card" target="_blank" href="juegos/juego1/">
+          <div class="img-container">
+              <img src="assets/imgTWHG.jpg.jpg" alt="The World's Hardest Game" />
+          </div>
+          <span>The World's Hardest Game</span>
+        </a>
+
+        <a class="game-card" target="_blank" href="juegos/juego2/">
+          <div class="img-container">
+              <img src="assets/ice-dodo-cover.jpg" alt="IceDodo" />
+          </div>
+          <span>IceDodo</span>
+        </a>
+
+        <a class="game-card" target="_blank" href="juegos/juego3/">
+          <div class="img-container">
+              <img src="assets/2049.jpg" alt="2048" />
+          </div>
+          <span>2048</span>
+        </a>
+
+        <a class="game-card" target="_blank" href="juegos/juego4/">
+          <div class="img-container">
+              <img src="assets/monkeymart.jpg" alt="MonkeyMart" />
+          </div>
+          <span>MonkeyMart</span>
+        </a>
+    </div>
+
+    <div id="cookie-banner" class="cookie-container">
+        <div class="cookie-content">
+            <p>Este sitio web utiliza cookies para garantizar que obtengas la mejor experiencia en nuestra web. 
+               <a href="cookies.html">Leer más</a>
+            </p>
+            <button id="accept-cookies" class="cookie-btn">Aceptar</button>
+        </div>
+    </div>
+
+
 </body>
 </html>
