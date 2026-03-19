@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     navGroup.innerHTML = `
         <a href="games.html" class="item">Games</a>
+        <a href="leaderboard.html" class="item">Leaderboard</a>
         <a href="services.html" class="item">Services</a>
         <a href="profile.html" class="item profile-link-box">👤 ${currentUser.username}</a>
         <a href="#" id="logout" class="item signup-btn">Salir</a>

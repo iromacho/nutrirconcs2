@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="/css/access-gate.css">
+    <script src="/js/access-gate.js" defer></script>
+
+    <meta charset="UTF-8">
+    <title>Leaderboard - NutrirConcs2</title>
+    <link rel="stylesheet" href="css/juegos-style.css">
+    <link rel="website icon" type="png" href="assets/icono.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/game-score-system.js" defer></script>
+</head>
+<body>
+    <div id="loader">
+      <div class="loader-content">
+        <div class="spinner"></div>
+        <h2>CARGANDO<span>...</span></h2>
+      </div>
+    </div>
+
+    <div id="aurora-container"></div>
+
+    <nav class="menu-bar">
+      <div class="group">
+        <a href="index.html" class="item title">Nutrir Concs 2</a>
+      </div>
+      <div class="group">
+        <a href="games.html" class="item">Games</a>
+        <a href="services.html" class="item">Apps</a>
+      </div>
+    </nav>
+
+    <main class="leaderboard-page" data-score-system data-game-id="leaderboard-page" data-leaderboard-limit="20" data-prompt-name="false">
+      <section class="games-stats-panel leaderboard-summary">
+        <div class="stats-card">
+          <p class="stats-label">Jugador actual</p>
+          <strong data-player-name>Invitado</strong>
+        </div>
+        <div class="stats-card">
+          <p class="stats-label">Tiempo acumulado</p>
+          <strong data-playtime-current>0h 0m</strong>
+        </div>
+      </section>
+
+      <section class="games-leaderboard" data-leaderboard-panel>
+        <div class="leaderboard-header">
+          <h1>Leaderboard</h1>
+          <p>Ranking por horas jugadas usando los usuarios guardados en login y el nombre recordado en cookies/localStorage.</p>
+        </div>
+        <ol class="leaderboard-list" data-leaderboard-list></ol>
+        <p class="leaderboard-empty" data-leaderboard-empty>No hay jugadores registrados todavía.</p>
+      </section>
+    </main>
+</body>
+</html>
