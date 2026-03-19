@@ -10,6 +10,7 @@
     <link rel="website icon" type="png" href="assets/icono.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/game-score-system.js" defer></script>
 </head>
 <body>
 
@@ -45,7 +46,33 @@
     </div>
 </div>
 
-   
+    <section class="games-stats-panel" data-score-system data-game-id="games-hub" data-leaderboard-limit="8" data-prompt-name="true">
+      <div class="stats-card">
+        <p class="stats-label">Jugador</p>
+        <strong data-player-name>Invitado</strong>
+      </div>
+      <div class="stats-card">
+        <p class="stats-label">Puntuación actual</p>
+        <strong data-score-current>0</strong>
+      </div>
+      <div class="stats-card">
+        <p class="stats-label">Récord</p>
+        <strong data-score-high>0</strong>
+      </div>
+      <div class="stats-card">
+        <p class="stats-label">Horas jugadas</p>
+        <strong data-playtime-current>0h 0m</strong>
+      </div>
+    </section>
+
+    <section class="games-leaderboard" data-leaderboard-panel>
+      <div class="leaderboard-header">
+        <h2>Leaderboard por horas jugadas</h2>
+        <p>Se actualiza automáticamente y se guarda en tu navegador.</p>
+      </div>
+      <ol class="leaderboard-list" data-leaderboard-list></ol>
+      <p class="leaderboard-empty" data-leaderboard-empty>No hay jugadores todavía. Abre un juego para empezar a sumar tiempo.</p>
+    </section>
 
     <div class="games-grid">
         <a class="game-card" target="_blank" href="juegos/juego1/">

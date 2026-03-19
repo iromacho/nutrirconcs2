@@ -36,6 +36,9 @@ var slash = 0;
 var leftWallCollision = rightWallCollision = upWallCollision = downWallCollision = false;
 var checkPoint1Collision = checkPoint2Collision = finishCollision = coinCollision = enemieCollision = false;
 function startGame(statement) {
+    if (statement && window.resetScore) {
+        window.resetScore();
+    }
     lvl = statement ? 0 : localStorage.getItem('lvl') != undefined ? parseInt(localStorage.getItem('lvl')) : 0;
     deaths = statement ? 0 : localStorage.getItem('deaths') != undefined ? parseInt(localStorage.getItem('deaths')) : 0;
     previousTime = statement ? 0 : localStorage.getItem('time') != undefined ? parseInt(localStorage.getItem('time')) : 0;
@@ -2708,6 +2711,9 @@ function checkCollide() {
     	coinCollision = false;
         currentCoins++;
         checkCollideCoins(coinSum[lvl-1],coinSum[lvl]);
+        if (window.addScore) {
+            window.addScore(10);
+        }
         if(!mute) {
             audioCoin.currentTime = 0;
             audioCoin.play();
@@ -2720,7 +2726,13 @@ function checkCollide() {
             audioLevel.currentTime = 0;
             audioLevel.play();
         }
+        if (window.addScore) {
+            window.addScore(100);
+        }
         if(lvl == 29) {
+            if (window.addScore) {
+                window.addScore(500);
+            }
             gameCompleted = true;
             endGame();
         }

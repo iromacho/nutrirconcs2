@@ -125,3 +125,29 @@ body {
 #full:hover {
 	transform: scale(0.75);
 }
+
+.game-score-panel {
+	position: absolute;
+	top: 56px;
+	right: 16px;
+	z-index: 3;
+	min-width: 180px;
+	padding: 10px;
+	border: 2px solid #000;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.92);
+	color: #000;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+}
+
+.game-score-row {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	margin-bottom: 6px;
+}
+
+.game-score-row:last-child {
+	margin-bottom: 0;
+}
