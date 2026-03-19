@@ -9,10 +9,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" type="image/x-icon" href="images/icon.png"/>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="../../js/game-score-system.js" defer></script>
 		<script type="text/javascript" src="script.js"></script>
 	</head>
-	<body>
+	<body data-score-system data-game-id="the-worlds-hardest-game" data-leaderboard-limit="5" data-prompt-name="true">
 		<div id="container">
+			<div class="game-score-panel">
+				<div class="game-score-row"><span>Jugador</span><strong data-player-name>Invitado</strong></div>
+				<div class="game-score-row"><span>Puntos</span><strong data-score-current>0</strong></div>
+				<div class="game-score-row"><span>Récord</span><strong data-score-high>0</strong></div>
+				<div class="game-score-row"><span>Horas</span><strong data-playtime-current>0h 0m</strong></div>
+			</div>
 			<div class="container-header"><span id="coins"></span><span id="level"></span><span id="deaths"></span></div>
 			<div id="home-screen">
 				<div id="square"></div>
