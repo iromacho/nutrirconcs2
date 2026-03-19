@@ -78,6 +78,23 @@ async function enviarAExcel(userData) {
     }
 }
 
+
+function ensureLeaderboardLink(navGroup) {
+    if (!navGroup || navGroup.querySelector('a[href="leaderboard.html"]')) return;
+
+    const servicesLink = navGroup.querySelector('a[href="services.html"]');
+    const leaderboardLink = document.createElement('a');
+    leaderboardLink.href = 'leaderboard.html';
+    leaderboardLink.className = 'item';
+    leaderboardLink.textContent = 'Leaderboard';
+
+    if (servicesLink) {
+        navGroup.insertBefore(leaderboardLink, servicesLink);
+    } else {
+        navGroup.appendChild(leaderboardLink);
+    }
+}
+
 /**
  * 4. LÓGICA PRINCIPAL AL CARGAR EL DOM
  */
@@ -100,6 +117,10 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('cookies-aceptadas', 'true');
             banner.classList.remove('active');
         };
+    }
+
+    if (navGroup) {
+        ensureLeaderboardLink(navGroup);
     }
 
     // --- Lógica de Usuario Logueado ---
